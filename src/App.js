@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import loadable from "@loadable/component"
 
 import {
     BrowserRouter as Router,
@@ -9,9 +10,11 @@ import {
     useParams
 } from "react-router-dom";
 
-import Home from "./routes/home"
-import About from "./routes/about"
-import Topics from "./routes/topics"
+const Home = loadable(() => import("./routes/home"))
+const About = loadable(() => import("./routes/about"))
+const Topics = loadable(() => import("./routes/topic"))
+
+
 
 const App = () =>
 
@@ -29,24 +32,29 @@ const App = () =>
                 </li>
             </ul>
 
-            <Switch>
+            <Suspense fallback={<div>Loading...</div>}>
 
-                <Route exact path="/">
-                    <Home />
-                </Route>
+                <Switch>
 
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route path="/topics">
-                    <Topics />
-                </Route>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
 
-                <Route path={"*"}>
-                    <Home />
-                </Route>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/topics">
+                        <Topics />
+                    </Route>
 
-            </Switch>
+                    <Route path={"*"}>
+                        <Home />
+                    </Route>
+
+                </Switch>
+
+            </Suspense>
+
         </div>
     </Router>
 
