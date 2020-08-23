@@ -1,4 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
+
+import "./index.scss"
 
 const Project = ({ repository_data }) => {
 
@@ -7,7 +9,7 @@ const Project = ({ repository_data }) => {
     const updated = repository_data["updated_at"]
     const created = repository_data["created_at"]
     const language = repository_data["language"] || "No language detected."
-    const license = repository_data["license"] && repository_data["license"]["spdx_id"] || "No license."
+    const license = repository_data["license"] ? repository_data["license"]["spdx_id"] : "No license."
     const stars = repository_data["stargazers_count"]
 
     return (

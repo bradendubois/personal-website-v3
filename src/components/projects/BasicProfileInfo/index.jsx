@@ -12,8 +12,8 @@ const BasicProfileInfo = () => {
                 setBio(data["bio"])
                 setBlog(data["blog"])
             })
-
     }, [])
+
     return (
         <div>
             <p>Profile: {blog}</p>
