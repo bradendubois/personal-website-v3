@@ -1,5 +1,7 @@
 import React, { Suspense } from "react"
 import { Redirect } from "react-router"
+import ReactMarkdown from "react-markdown"
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,6 +20,8 @@ const About = loadable(() => import("./routes/about"))
 const Topics = loadable(() => import("./routes/topics"))
 
 const Projects = loadable(() => import("./routes/projects"))
+
+const t = require("./Test.md")
 
 const App = () =>
 
@@ -38,6 +42,9 @@ const App = () =>
                     </li>
                     <li>
                         <NavLink to="/github" activeClassName={"active"}>Github</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"/blog"}>Blog </NavLink>
                     </li>
                 </ul>
 
