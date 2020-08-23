@@ -1,11 +1,25 @@
 import React, {useEffect, Suspense } from "react";
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink,
+    Link, useRouteMatch, Redirect
+} from "react-router-dom";
+
 import Project from "../project";
+
+import "./index.scss"
 
 const RepoInfo = () => {
 
+    let match = useRouteMatch()
+
     const [results, setResults] = React.useState([])
     const [upperLimit, increaseLimit] = React.useState(5)
+    const [languages, setLanguages] = React.useState([])
+    const [preferred, setPreferred] = React.useState("")
 
     useEffect(() => {
         fetch("https://api.github.com/users/bradendubois/repos")
@@ -27,7 +41,19 @@ const RepoInfo = () => {
                                     return Date.parse(b_t) - Date.parse(a_t)
                                 }); return repos
                             })
-                            .then(sorted => setResults(sorted))
+                            .then(sorted => {
+                                setResults(sorted)
+                                let cur = {}
+                                for (let project of sorted) {
+                                    if (!project["language"]) continue
+                                    if (!Object.keys(cur).includes(project["language"])) {
+                                        cur[project["language"]] = 1
+                                    } else {
+                                        cur[project["language"]]++
+                                    }
+                                }
+                                setLanguages(cur)
+                            })
                         break
 
                     // Rate limited - too many queries
@@ -45,14 +71,46 @@ const RepoInfo = () => {
     }, [])
 
     return (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Router>
+
+            {Object.keys(languages).map((language, i) =>
+                <NavLink
+                    key={i}
+                    to={location =>
+                        location.pathname === `${match.url}/${language.toLowerCase()}` ?
+                            `${match.url}` : `${match.url}/${language.toLowerCase()}`
+                    }
+
+                    activeClassName={"activeLanguage"}
+                >
+                    <button
+                        onClick={() =>
+                            setPreferred(preferred === language ? "" : language)}
+                    >{language}: {languages[language]}</button>
+                </NavLink>)
+            }
+
             {results
-                .filter((i, x) => x < upperLimit)
+                .filter(x => (preferred ? x["language"] === preferred : true))
+                .filter((x, i) => i < upperLimit)
                 .map((name, i) => <Project key={i} repository_data={name} />)
             }
             {upperLimit < results.length &&
             <button onClick={() => increaseLimit(upperLimit + 5)}>Show More</button>}
-        </Suspense>
+
+            <Switch>
+                <Route exact path={`${match.path}`}/>
+
+                {Object.keys(languages).map((language, i) =>
+                    <Route
+                        path={`${match.path}/:language`}
+                        key={i}
+                    />
+                )}
+
+                <Redirect to={`${match.path}`} />
+            </Switch>
+        </Router>
     )
 }
 
