@@ -18,10 +18,9 @@ import loadable from "@loadable/component"
 const Home = loadable(() => import("./routes/home"))
 const About = loadable(() => import("./routes/about"))
 const Topics = loadable(() => import("./routes/topics"))
-
+const Blog = loadable(() => import("./routes/blog"))
 const Projects = loadable(() => import("./routes/projects"))
 
-const t = require("./Test.md")
 
 const App = () =>
 
@@ -44,7 +43,7 @@ const App = () =>
                         <NavLink to="/github" activeClassName={"active"}>Github</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/blog"}>Blog </NavLink>
+                        <NavLink to={"/blog"}>Blog</NavLink>
                     </li>
                 </ul>
 
@@ -63,6 +62,12 @@ const App = () =>
                     <Route path={"/github"}>
                         <Suspense fallback={<h1>Querying Github...</h1>} >
                             <Projects />
+                        </Suspense>
+                    </Route>
+
+                    <Route>
+                        <Suspense fallback={<h1>Loading blog...</h1>}>
+                            <Blog />
                         </Suspense>
                     </Route>
 
