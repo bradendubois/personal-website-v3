@@ -1,7 +1,7 @@
 import {Link, Route, Switch, useRouteMatch} from "react-router-dom";
 import React from "react";
 
-import Topic from "../topic"
+import Topic from "./Topic"
 
 const Topics = () => {
 

@@ -9,13 +9,11 @@ import {
     Link
 } from "react-router-dom";
 
-import Button from "react-bulma-components/"
-
 // Use Loadable components for code-splitting
-const Home = loadable(() => import("./routes/home"))
-const About = loadable(() => import("./routes/about"))
-const Topics = loadable(() => import("./routes/topics"))
-const Projects = loadable(() => import("./routes/projects"))
+const Home = loadable(() => import("./routes/Home"))
+const About = loadable(() => import("./routes/About"))
+const Topics = loadable(() => import("./routes/Topics"))
+const Projects = loadable(() => import("./routes/Projects"))
 
 const View = [
     {
@@ -40,11 +38,13 @@ const View = [
     }
 ]
 
+
+// TODO - Handle matching with longer paths (i.e. /foo/bar should match /foo)
 const back = (location) => {
     if (location.pathname === "/") return View[View.length-1]
 
     for (let i = 0; i < View.length; i++) {
-        if (location.pathname === View[i].path) {
+        if (location.pathname === View[i].path || location.find(View[i].path) > -1) {
             return View[(i + View.length - 1) % View.length]
         }
     }
@@ -54,7 +54,7 @@ const next = (location) => {
     if (location.pathname === "/") return View[0]
 
     for (let i = 0; i < View.length; i++) {
-        if (location.pathname === View[i].path) {
+        if (location.pathname === View[i].path || location.find(View[i].path) > -1) {
             return View[(i + 1) % View.length]
         }
     }
@@ -64,15 +64,17 @@ const App = () =>
 
     <Router>
 
-        <Link
-            to={(location) => back(location).path}
-        ><button>Left</button></Link>
+        {/*
+        <Link to={(location) => back(location).path}
+        ><button id={"left-button"}>Left</button></Link>
 
-        <Link
-            to={location => next(location).path}
-        ><button>Right</button></Link>
+        <Link to={location => next(location).path}
+        ><button id={"right-button"}>Right</button></Link>
+        */}
 
         <div>
+
+            {/* Nav bar  */}
             <ul>
                 {View.map((page, i) =>
                     <li key={i}>
@@ -83,9 +85,6 @@ const App = () =>
                     </li>
                 )}
             </ul>
-
-            <button>Back</button>
-            <button>Forward</button>
 
             {/* Switch to determine content */}
             <Switch>
@@ -98,7 +97,7 @@ const App = () =>
                 {View.map((page, i) =>
                     <Route
                         key={i}
-                        exact path={page.path}
+                        path={page.path}
                         component={page.component}
                     />)
                 }
