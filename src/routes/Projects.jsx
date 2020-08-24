@@ -1,18 +1,8 @@
 import React from "react"
 import loadable from "@loadable/component";
 
-const Loader = <p>Loading...</p>
-
-const BasicProfileInfo  = loadable(() =>
-    import("../components/projects/BasicProfileInfo"), {
-        fallback: Loader
-})
-
-const RepoInfo = loadable(() =>
-    import("../components/projects/RepoInfo"), {
-        fallback: Loader
-    }
-)
+const BasicProfileInfo  = loadable(() => import("../components/projects/BasicProfileInfo"))
+const RepoInfo = loadable(() =>  import("../components/projects/GithubProjects"))
 
 const Projects = () =>
 

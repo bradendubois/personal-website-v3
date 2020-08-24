@@ -1,18 +1,30 @@
-import React, {useEffect, Suspense } from "react";
+import React, { useEffect } from "react";
 
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     NavLink,
-    Link, useRouteMatch, Redirect
+    Link,
+    useRouteMatch,
+    Redirect
 } from "react-router-dom";
 
 import Project from "../project";
 
 import "./index.scss"
 
-const RepoInfo = () => {
+const classify = (language) => {
+
+    switch (language) {
+        case "C++":
+            return "CPP"
+        default:
+            return language
+    }
+}
+
+const GithubProjects = () => {
 
     let match = useRouteMatch()
 
@@ -41,6 +53,8 @@ const RepoInfo = () => {
                                     return Date.parse(b_t) - Date.parse(a_t)
                                 }); return repos
                             })
+
+                            // Save sorted, count/save languages
                             .then(sorted => {
                                 setResults(sorted)
                                 let cur = {}
@@ -73,34 +87,57 @@ const RepoInfo = () => {
     return (
         <Router>
 
-            {Object.keys(languages).map((language, i) =>
-                <NavLink
-                    key={i}
-                    to={location =>
-                        location.pathname === `${match.url}/${language.toLowerCase()}` ?
-                            `${match.url}` : `${match.url}/${language.toLowerCase()}`
+            <div className={"githubProjectContent"}>
+
+                <div className={"languageButtonContainer"}>
+                    {/* Map each language to a proper NavLink that changes the URL */}
+                    {Object.keys(languages).map((language, i) =>
+                        <NavLink
+                            key={i}
+                            to={location =>
+                                location.pathname === `${match.url}/${language.toLowerCase()}` ?
+                                    `${match.url}` : `${match.url}/${language.toLowerCase()}`}
+                            activeClassName={"activeLanguage"}
+                            className={"languageButton"}
+                            onClick={() =>
+                                setPreferred(preferred === language ? "" : language)}
+                        >
+                            <div className={classify(language) + "-circle" + " circle"}/>
+                            <p className={classify(language) + "-border"}>{language} (<span>{languages[language]}</span>)</p>
+                        </NavLink>)
+                    }
+                </div>
+
+                <div className={"projectBox"}>
+
+                    {/* Filter down by preferred language (if set) and to first X abiding by upper limit,
+                 and map all these to a proper "Project" object */}
+                    {results
+                        .filter(x => (preferred ? x["language"] === preferred : true))
+                        .filter((x, i) => i < upperLimit)
+                        .map((name, i) => <Project key={i} repository_data={name} />)
                     }
 
-                    activeClassName={"activeLanguage"}
-                >
+                    {/* Only show "Show More" button when there actually is more to show */}
+                    {upperLimit < results
+                        .filter(x => (preferred ? x["language"] === preferred : true)).length &&
                     <button
-                        onClick={() =>
-                            setPreferred(preferred === language ? "" : language)}
-                    >{language}: {languages[language]}</button>
-                </NavLink>)
-            }
+                        className={"showMoreButton"}
+                        onClick={() => increaseLimit(upperLimit + 5)}
+                    >Show More</button>}
 
-            {results
-                .filter(x => (preferred ? x["language"] === preferred : true))
-                .filter((x, i) => i < upperLimit)
-                .map((name, i) => <Project key={i} repository_data={name} />)
-            }
-            {upperLimit < results.length &&
-            <button onClick={() => increaseLimit(upperLimit + 5)}>Show More</button>}
+                </div>
 
+            </div>
+
+
+            {/* Switch used to implement a catch-all Redirect */}
             <Switch>
+
+                {/* Ensure the unfiltered route is caught */}
                 <Route exact path={`${match.path}`}/>
 
+                {/* Catch each language-specific route */}
                 {Object.keys(languages).map((language, i) =>
                     <Route
                         path={`${match.path}/:language`}
@@ -108,10 +145,11 @@ const RepoInfo = () => {
                     />
                 )}
 
+                {/* Redirect back to the default on any invalid language */}
                 <Redirect to={`${match.path}`} />
             </Switch>
         </Router>
     )
 }
 
-export default RepoInfo
+export default GithubProjects

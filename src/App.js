@@ -15,6 +15,8 @@ const About = loadable(() => import("./routes/About"))
 const Topics = loadable(() => import("./routes/Topics"))
 const Projects = loadable(() => import("./routes/Projects"))
 
+const Footer = loadable(() => import("./components/Footer"))
+
 const View = [
     {
       path: "/me",
@@ -35,6 +37,11 @@ const View = [
         path: "/github",
         display: "Github",
         component: Projects
+    },
+    {
+        path: "/education",
+        display: "Education",
+        component: loadable(() => import("./routes/Education"))
     }
 ]
 
@@ -106,7 +113,18 @@ const App = () =>
                 <Route path={"*"}>
                     <Redirect to={"/"}/>
                 </Route>
+            </Switch>
 
+            {/* Footer Switch */}
+            <Switch>
+                {View.map((page, i) =>
+                    <Route
+                        key={i}
+                        path={page.path}
+                    >
+                        <Footer section={page.display} />
+                    </Route>)
+                }
             </Switch>
         </div>
 
