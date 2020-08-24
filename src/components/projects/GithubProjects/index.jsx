@@ -103,9 +103,20 @@ const GithubProjects = () => {
                                 setPreferred(preferred === language ? "" : language)}
                         >
                             <div className={classify(language) + "-circle" + " circle"}/>
-                            <p className={classify(language) + "-border"}>{language} (<span>{languages[language]}</span>)</p>
+                            <p className={classify(language) + "-border"}>
+                                <span className={"languageText"}>{language}</span> (<span className={"languageCount"}>{languages[language]}</span>)
+                            </p>
                         </NavLink>)
                     }
+
+                    <NavLink
+                        to={`${match.url}`}
+                        className={"languageButton"}
+                        onClick={() => setPreferred("")}
+                    ><p>All (<span className={"languageCount"}>
+                        {Object.keys(languages).reduce((acc, i) => acc + languages[i], 0)}</span>)
+                    </p>
+                    </NavLink>
                 </div>
 
                 <div className={"projectBox"}>

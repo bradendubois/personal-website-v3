@@ -5,18 +5,20 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    NavLink,
-    Link
 } from "react-router-dom";
 
-// Use Loadable components for code-splitting
+// Lazy importing for code splitting
 const Home = loadable(() => import("./routes/Home"))
-const About = loadable(() => import("./routes/About"))
-const Topics = loadable(() => import("./routes/Topics"))
-const Projects = loadable(() => import("./routes/Projects"))
-
+const NavBar = loadable(() => import("./components/NavBar"))
 const Footer = loadable(() => import("./components/Footer"))
 
+/*
+ * We define the "view" / ordering of the page here, and this ordering allows the generation
+ * of the Nav Bar, and generates the Routes for having foo.com/bar matches to update the view
+ * accordingly. The loadable module allows lazy importing for code splitting. We dont' include
+ * the Home or footer as a module in this array; the Home is its own component that should be
+ * accessible with/without the the Nav Bar, and the Footer shouldn't be in the Nav Bar.
+ */
 const View = [
     {
       path: "/me",
@@ -26,17 +28,17 @@ const View = [
     {
         path: "/about",
         display: "About",
-        component: About
+        component: loadable(() => import("./routes/About"))
     },
     {
         path: "/topics",
         display: "Topics",
-        component: Topics
+        component: loadable(() => import("./routes/Topics"))
     },
     {
         path: "/github",
         display: "Github",
-        component: Projects
+        component: loadable(() => import("./routes/Projects"))
     },
     {
         path: "/education",
@@ -47,6 +49,7 @@ const View = [
 
 
 // TODO - Handle matching with longer paths (i.e. /foo/bar should match /foo)
+/*
 const back = (location) => {
     if (location.pathname === "/") return View[View.length-1]
 
@@ -66,11 +69,13 @@ const next = (location) => {
         }
     }
 }
+*/
 
 const App = () =>
 
     <Router>
 
+        {/* TODO - Some kind of back/forward left/right button system, possibly in the nav bar? */}
         {/*
         <Link to={(location) => back(location).path}
         ><button id={"left-button"}>Left</button></Link>
@@ -82,16 +87,7 @@ const App = () =>
         <div>
 
             {/* Nav bar  */}
-            <ul>
-                {View.map((page, i) =>
-                    <li key={i}>
-                        <NavLink
-                            exact to={page.path}
-                            activeClassName={"active"}
-                        >{page.display}</NavLink>
-                    </li>
-                )}
-            </ul>
+            <NavBar view={View} />
 
             {/* Switch to determine content */}
             <Switch>
