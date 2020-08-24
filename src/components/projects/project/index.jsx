@@ -2,8 +2,8 @@ import React from "react"
 
 import "./index.scss"
 
-import clock_icon from "../../../clock.png"
-import star_icon from "../../../star.png"
+import clock_icon from "../../../assets/clock.png"
+import star_icon from "../../../assets/star.png"
 
 const ShortHand = (language) => {
     switch (language) {

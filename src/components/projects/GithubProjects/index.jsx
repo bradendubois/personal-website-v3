@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
-
+import loadable from "@loadable/component"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     NavLink,
-    Link,
     useRouteMatch,
     Redirect
 } from "react-router-dom";
 
-import Project from "../project";
-
 import "./index.scss"
+
+const Project = loadable(() => import("../project"))
 
 const classify = (language) => {
 
@@ -29,7 +28,7 @@ const GithubProjects = () => {
     let match = useRouteMatch()
 
     const [results, setResults] = React.useState([])
-    const [upperLimit, increaseLimit] = React.useState(5)
+    const [upperLimit, setLimit] = React.useState(5)
     const [languages, setLanguages] = React.useState([])
     const [preferred, setPreferred] = React.useState("")
 
@@ -120,8 +119,7 @@ const GithubProjects = () => {
                 </div>
 
                 <div className={"projectBox"}>
-
-                    {/* Filter down by preferred language (if set) and to first X abiding by upper limit,
+                {/* Filter down by preferred language (if set) and to first X abiding by upper limit,
                  and map all these to a proper "Project" object */}
                     {results
                         .filter(x => (preferred ? x["language"] === preferred : true))
@@ -129,13 +127,22 @@ const GithubProjects = () => {
                         .map((name, i) => <Project key={i} repository_data={name} />)
                     }
 
-                    {/* Only show "Show More" button when there actually is more to show */}
-                    {upperLimit < results
-                        .filter(x => (preferred ? x["language"] === preferred : true)).length &&
+                </div>
+
+                {/* Box for Show More / Show Less buttons */}
+                <div className={"showButtons"}>
+
+                    {/* Only show "Show More" when less than max shown */}
+                    {upperLimit < results.filter(x => (preferred ? x["language"] === preferred : true)).length &&
                     <button
-                        className={"showMoreButton"}
-                        onClick={() => increaseLimit(upperLimit + 5)}
+                        onClick={() => setLimit(upperLimit + 5)}
                     >Show More</button>}
+
+
+                    {/* Only show "Show Less" when more than min shown */}
+                    {upperLimit > 5 &&
+                    <button onClick={() => setLimit(Math.max(upperLimit - 5, 5))}
+                    >Show Less</button>}
 
                 </div>
 

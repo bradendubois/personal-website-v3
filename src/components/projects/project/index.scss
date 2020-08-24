@@ -31,8 +31,8 @@
 
   .name {
 
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
 
     min-width: 25%;
     width: 25%;
@@ -45,9 +45,10 @@
   }
 
   .desc {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 300;
     flex-grow: 1;
+    margin-left: 5px;
 
     white-space: nowrap;
     overflow: hidden;
@@ -57,9 +58,7 @@
 
   .extra {
 
-    max-width: 20%;
-    width: 20%;
-    min-width: 20%;
+    flex-grow: .25;
 
     margin-left: 15px;
     display: flex;
