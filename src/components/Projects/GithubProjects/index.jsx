@@ -11,7 +11,7 @@ import {
 
 import "./index.scss"
 
-const Project = loadable(() => import("../project"))
+const Project = loadable(() => import("../Project"))
 
 const classify = (language) => {
 
@@ -101,7 +101,7 @@ const GithubProjects = () => {
                             onClick={() =>
                                 setPreferred(preferred === language ? "" : language)}
                         >
-                            <div className={classify(language) + "-circle" + " circle"}/>
+                            <div className={`${classify(language)}-circle  circle`}/>
                             <p className={classify(language) + "-border"}>
                                 <span className={"languageText"}>{language}</span> (<span className={"languageCount"}>{languages[language]}</span>)
                             </p>

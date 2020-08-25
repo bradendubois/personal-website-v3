@@ -1,0 +1,21 @@
+.undergraduate {
+
+  grid-template-areas:
+    "logo header header"
+    "undergraduateCoursesSide undergraduateCoursesContent undergraduateCoursesContent"
+    "undergraduateAchievementsSide undergraduateAchievementsContent undergraduateAchievementsContent"
+    "undergraduateGroupsSide undergraduateGroupsContent undergraduateGroupsContent";
+
+  a { grid-area: logo; }
+  .undergraduateHeader { grid-area: header; }
+
+  .undergraduateCoursesSide { grid-area: undergraduateCoursesSide; }
+  .undergraduateCoursesContent { grid-area: undergraduateCoursesContent; }
+
+  .undergraduateAchievementsSide { grid-area: undergraduateAchievementsSide; }
+  .undergraduateAchievementsContent { grid-area: undergraduateAchievementsContent; }
+
+  .undergraduateGroupsSide { grid-area: undergraduateGroupsSide; }
+  .undergraduateGroupsContent { grid-area: undergraduateGroupsContent ; }
+
+}

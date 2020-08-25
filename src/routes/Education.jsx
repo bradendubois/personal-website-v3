@@ -1,16 +1,16 @@
 import React from "react"
 import loadable from "@loadable/component"
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     NavLink,
     useRouteMatch,
-    Link,
     Redirect
 } from "react-router-dom";
 
 import EducationSummary from "../components/Education/EducationSummary";
+
+import "../components/Education/index.scss"
 
 const Programs = [
     {
@@ -44,7 +44,7 @@ const Education = () => {
                                 `${match.url}` : `${match.url}/${program.path}`
                         }
                         activeClassName={"activeEducationProgram"}
-                        className={`educationProgram ${program}`}
+                        className={`educationProgram`}
                     >{program.display}</NavLink>)}
 
             </div>
@@ -58,8 +58,12 @@ const Education = () => {
                 </Route>
 
                 {/* Map each Program to a Route showing its component */}
-                {Programs.map(program =>
-                    <Route path={`${match.path}/${program.path}`} component={program.component} />
+                {Programs.map((program, i) =>
+                    <Route
+                        key={i}
+                        path={`${match.path}/${program.path}`}
+                        component={program.component}
+                    />
                 )}
 
                 {/* Redirect on all other Routes to the summary */}

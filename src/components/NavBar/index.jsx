@@ -5,7 +5,7 @@ import "./index.scss"
 
 const NavBar = ({ view }) => {
 
-    const [darkMode, toggleDarkMode] = React.useState(false)
+    // const [darkMode, toggleDarkMode] = React.useState(false)
 
     return (
         <nav>
