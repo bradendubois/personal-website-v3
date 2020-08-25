@@ -19,8 +19,9 @@ const NavBar = ({ view }) => {
                 >{page.display}</NavLink>
             )}
             </div>
+            {/*
             <button onClick={() => toggleDarkMode(!darkMode)}
-            >{darkMode ? "Dark Mode" : "Light Mode"}</button>
+            >{darkMode ? "Dark Mode" : "Light Mode"}</button>*/}
         </nav>
     )
 }

@@ -1,0 +1,38 @@
+.educationContainer {
+
+}
+
+
+.educationEntry {
+
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  margin: auto;
+
+  .header {
+
+  }
+
+  .item {
+
+    display: flex;
+    flex-direction: row;
+
+    .itemSide {
+
+      width: 20%;
+      max-width: 150px;
+
+      margin: 10px;
+    }
+
+    .itemContent {
+
+      flex-grow: 1;
+
+      margin: 10px;
+    }
+  }
+}

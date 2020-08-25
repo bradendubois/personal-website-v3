@@ -141,7 +141,7 @@ const GithubProjects = () => {
 
                     {/* Only show "Show Less" when more than min shown */}
                     {upperLimit > 5 &&
-                    <button onClick={() => setLimit(Math.max(upperLimit - 5, 5))}
+                    <button onClick={() => setLimit(Math.max(upperLimit - 10, 5))}
                     >Show Less</button>}
 
                 </div>
