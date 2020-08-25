@@ -1,12 +1,13 @@
 .certificate {
 
   grid-template-areas:
-    "logo header header"
+    "logo header certificateDetail"
     "certificateCoursesSide certificateCoursesContent certificateCoursesContent"
   ;
 
   a { grid-area: logo; }
   .certificateHeader { grid-area: header; }
+  .certificateDetail { grid-area: certificateDetail; }
 
   .certificateCoursesSide { grid-area: certificateCoursesSide; }
   .certificateCoursesContent { grid-area: certificateCoursesContent; }

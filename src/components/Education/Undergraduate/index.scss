@@ -1,13 +1,14 @@
 .undergraduate {
 
   grid-template-areas:
-    "logo header header"
+    "logo header undergraduateDetail"
     "undergraduateCoursesSide undergraduateCoursesContent undergraduateCoursesContent"
     "undergraduateAchievementsSide undergraduateAchievementsContent undergraduateAchievementsContent"
     "undergraduateGroupsSide undergraduateGroupsContent undergraduateGroupsContent";
 
   a { grid-area: logo; }
   .undergraduateHeader { grid-area: header; }
+  .undergraduateDetail { grid-area: undergraduateDetail; }
 
   .undergraduateCoursesSide { grid-area: undergraduateCoursesSide; }
   .undergraduateCoursesContent { grid-area: undergraduateCoursesContent; }

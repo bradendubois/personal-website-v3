@@ -13,7 +13,7 @@ const NavBar = ({ view }) => {
             {view.map((page, i) =>
                 <NavLink
                     key={i}
-                    exact to={page.path}
+                    to={page.path}
                     activeClassName={"active"}
                     className={"link"}
                 >{page.display}</NavLink>

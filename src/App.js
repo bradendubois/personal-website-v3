@@ -7,6 +7,8 @@ import {
     Route,
 } from "react-router-dom";
 
+import 'katex/dist/katex.min.css';
+
 // Lazy importing for code splitting
 const Home = loadable(() => import("./routes/Home"))
 const NavBar = loadable(() => import("./components/NavBar"))

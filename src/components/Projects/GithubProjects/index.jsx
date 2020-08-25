@@ -9,6 +9,8 @@ import {
     Redirect
 } from "react-router-dom";
 
+import { InlineMath, BlockMath } from 'react-katex';
+
 import "./index.scss"
 
 const Project = loadable(() => import("../Project"))
@@ -87,6 +89,17 @@ const GithubProjects = () => {
         <Router>
 
             <div className={"githubProjectContent"}>
+
+                <div>
+                    <p>This is accomplished using the Github REST API; requests are rate-limited to 60/hour. The
+                        repository summary for a user lists the <strong>primary</strong> language for each repository,
+                        where a detailed breakdown by repository requires a more specific query <i>per</i> repository.
+                        This would result in requiring a total of <InlineMath math={"x + 1"} /> queries made per page
+                        load, resulting in a limit of <InlineMath math={"\\left\\lfloor\\dfrac{x+1}{60}\\right\\rfloor"} />
+                        loads per hour. Therefore, the rate-limit is easier to hit as the number of repositories
+                        grows, until, with 59+ repositories, it can no longer be fully processed.
+                    </p>
+                </div>
 
                 <div className={"languageButtonContainer"}>
                     {/* Map each language to a proper NavLink that changes the URL */}

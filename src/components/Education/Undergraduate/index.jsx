@@ -37,6 +37,11 @@ const Undergraduate = () => {
                 <p>Also did a <Link to={"/education/certificate"}>Certificate</Link>.</p>
             </div>
 
+            <div className={"programDetail undergraduateDetail"}>
+                <p>2017 - 2022</p>
+                <p>Saskatoon, SK</p>
+            </div>
+
 
             {/* Summary */}
 

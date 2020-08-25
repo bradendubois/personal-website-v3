@@ -37,6 +37,11 @@ const Certificate = () => {
 
             </div>
 
+            <div className={"programDetail certificateDetail"}>
+                <p>2017 - 2020</p>
+                <p>Saskatoon, SK</p>
+            </div>
+
             {/* Courses Taken */}
             <div className={"itemSide certificateCoursesSide"}>
 

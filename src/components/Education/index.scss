@@ -11,6 +11,15 @@
       border: 2px solid black;
 
     }
+
+    .activeEducationProgram.undergraduate {
+      color: lightgreen;
+    }
+
+    .activeEducationProgram.certificate {
+      color: green;
+    }
+
   }
 
 }
@@ -24,21 +33,22 @@
 
   display: grid;
 
-  grid-template-columns: 150px auto auto;
+  grid-template-columns: 150px auto 100px;
 
   a {
+
+    filter: grayscale(80%);
+    transition: 0.1s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
     img {
 
       height: 96px;
       border: 3px solid #c7c7c7;
       border-radius: 50%;
-
-      filter: grayscale(80%);
-      transition: 0.1s ease;
-
-      &:hover {
-        filter: grayscale(0%);
-      }
     }
   }
 

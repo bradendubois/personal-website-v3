@@ -44,7 +44,7 @@ const Education = () => {
                                 `${match.url}` : `${match.url}/${program.path}`
                         }
                         activeClassName={"activeEducationProgram"}
-                        className={`educationProgram`}
+                        className={`educationProgram ${program.path}`}
                     >{program.display}</NavLink>)}
 
             </div>

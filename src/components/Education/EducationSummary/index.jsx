@@ -2,9 +2,17 @@ import React from "react";
 
 const EducationSummary = () => {
 
-
     return (
-        <h3>Education Summary</h3>
+        <div>
+            <h3>Education Summary</h3>
+
+
+            <h3>Undergraduate</h3>
+
+
+            <h4>Certificate</h4>
+        </div>
+
     )
 }
 
