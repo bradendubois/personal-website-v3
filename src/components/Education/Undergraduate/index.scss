@@ -3,6 +3,7 @@
   grid-template-areas:
     "logo header undergraduateDetail"
     "undergraduateCoursesSide undergraduateCoursesContent undergraduateCoursesContent"
+    "undergraduateExperienceSide undergraduateExperienceContent undergraduateExperienceContent"
     "undergraduateAchievementsSide undergraduateAchievementsContent undergraduateAchievementsContent"
     "undergraduateGroupsSide undergraduateGroupsContent undergraduateGroupsContent";
 
@@ -12,6 +13,9 @@
 
   .undergraduateCoursesSide { grid-area: undergraduateCoursesSide; }
   .undergraduateCoursesContent { grid-area: undergraduateCoursesContent; }
+
+  .undergraduateExperienceSide { grid-area: undergraduateExperienceSide; }
+  .undergraduateExperienceContent { grid-area: undergraduateExperienceContent; }
 
   .undergraduateAchievementsSide { grid-area: undergraduateAchievementsSide; }
   .undergraduateAchievementsContent { grid-area: undergraduateAchievementsContent; }

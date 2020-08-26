@@ -6,18 +6,18 @@
     width: max-content;
 
     .educationProgram {
-
       margin: 10px;
       border: 2px solid black;
-
+      border-radius: 1px;
+      padding: 5px 10px;
     }
 
     .activeEducationProgram.undergraduate {
-      color: lightgreen;
+      background-color: lightgreen;
     }
 
     .activeEducationProgram.certificate {
-      color: green;
+      background-color: green;
     }
 
   }
@@ -27,13 +27,14 @@
 
 .educationEntry {
 
+  font-family: "Montserrat", sans-serif;
+
   width: 90%;
   margin: auto;
 
-
   display: grid;
 
-  grid-template-columns: 150px auto 100px;
+  grid-template-columns: 150px 1fr auto;
 
   a {
 
@@ -46,7 +47,9 @@
 
     img {
 
-      height: 96px;
+      vertical-align: middle;
+
+      height: 84px;
       border: 3px solid #c7c7c7;
       border-radius: 50%;
     }
@@ -54,26 +57,172 @@
 
   .header {
 
+    text-align: center;
+
+    h1, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 24pt;
+    }
+
+    h2 {
+      font-size: 22pt;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+
+  .programDetail {
+
+    padding-top: 5px;
+
+    p {
+      padding: 0;
+      width: max-content;
+      margin: 0 0 0 auto;
+    }
+
+    p:nth-child(1) {
+      font-size: 12pt;
+      font-weight: 400;
+    }
+
+    p:nth-child(2) {
+      font-style: italic;
+      font-weight: 300;
+    }
   }
 
   .itemSide {
 
     margin: 10px 0 0 0;
+    padding-top: 10px;
 
     border-top: 1px solid black;
 
     a {
       margin: 5px auto auto 0;
+      text-decoration: none;
+      font-weight: 500;
+
+      transition: 0.2s;
+
+      &:active, &:focus {
+        color: #109ae7;
+      }
     }
   }
 
   .itemContent {
 
     margin: 10px;
-    padding: 10px;
+    padding: 10px 0 0 10px;
 
     border-top: 1px solid black;
     border-left: 1px solid black;
-    border-radius: 3px;
+    border-top-left-radius: 3px;
+
+    li {
+      list-style-type: circle;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+
+      text-decoration: underline;
+      text-decoration-color: #2154aa;
+
+      color: black;
+
+      &:hover {
+        color: cornflowerblue;
+      }
+
+      &:active, &:focus {
+        color: #156189;
+      }
+    }
+
+    .nestedItem {
+
+      border-bottom: 1px solid grey;
+      border-right: 1px solid grey;
+      border-bottom-right-radius: 3px;
+
+      margin-bottom: 10px;
+
+      padding-right: 10px;
+      padding-bottom: 10px;
+
+      h3 {
+        margin: 0;
+        float: left;
+        font-weight: 600;
+      }
+
+      h4 {
+        margin: 0;
+        float: right;
+        clear: right;
+        font-weight: 300;
+
+        &:last-of-type {
+          font-style: italic;
+        }
+      }
+
+      p {
+        padding: 5px 0;
+
+      }
+
+      p, ul {
+        clear: both;
+      }
+    }
+
+    div:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .group {
+
+      padding-bottom: 15px;
+
+      h3 {
+        clear: both;
+      }
+
+      ul {
+        margin: 10px 0;
+      }
+
+      .roleDetails {
+
+        clear: both;
+
+        display: flex;
+        flex-direction: row;
+
+        .role {
+          text-align: left;
+          clear: left;
+        }
+
+        .time {
+          margin-left: auto;
+          clear: right;
+        }
+      }
+    }
   }
 }

@@ -9,7 +9,7 @@ import {
     Redirect
 } from "react-router-dom";
 
-import { InlineMath, BlockMath } from 'react-katex';
+import { InlineMath } from 'react-katex';
 
 import "./index.scss"
 

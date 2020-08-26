@@ -15,7 +15,11 @@ nav {
     padding: 5px 10px;
   }
 
+  .Me.active {
+    display: none;
+  }
+
   .active {
-    color: lightblue;
+    background-color: lightblue;
   }
 }

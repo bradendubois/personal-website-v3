@@ -15,7 +15,7 @@ const NavBar = ({ view }) => {
                     key={i}
                     to={page.path}
                     activeClassName={"active"}
-                    className={"link"}
+                    className={`link ${page.display}`}
                 >{page.display}</NavLink>
             )}
             </div>

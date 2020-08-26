@@ -42,9 +42,6 @@ const Undergraduate = () => {
                 <p>Saskatoon, SK</p>
             </div>
 
-
-            {/* Summary */}
-
             {/* Courses Taken */}
             <div className={"itemSide undergraduateCoursesSide"} >
                 <NavLink
@@ -87,6 +84,32 @@ const Undergraduate = () => {
             </div>
 
             {/* Experience */}
+            <div className={"itemSide undergraduateExperienceSide"}>
+                <NavLink
+                    to={location =>
+                        location.pathname === `${match.url}/experience` ?
+                            `${match.url}` : `${match.url}/experience`
+                    }
+                    activeClassName={"activeItemSide"}
+                >Experience</NavLink>
+            </div>
+            <div className={"itemContent undergraduateExperienceContent"}>
+
+                {/* Research Assistant */}
+                <div className={"nestedItem"}>
+                    <h3>Student Research Assistant</h3>
+                    <h4>Spring 2020 - Present</h4>
+                    <p>Working with Professor Eric Neufeld. TODO</p>
+                </div>
+
+                {/* TA / Marking Work */}
+                <div className={"nestedItem"}>
+                    <h3>Student Teaching Assistant / Marker</h3>
+                    <h4>Fall 2020</h4>
+                    <p>TODO</p>
+                </div>
+
+            </div>
 
             {/* Achievements */}
             <div className={"itemSide undergraduateAchievementsSide"} >
@@ -101,15 +124,20 @@ const Undergraduate = () => {
             <div className={"itemContent undergraduateAchievementsContent"}>
 
                 {/* CS USRA */}
-                <div>
+                <div className={"nestedItem"}>
                     <h3>Computer Science USRA</h3>
                     <h4>Summer 2020</h4>
                     <p>Recipient of a Department of Computer Science Undergraduate Student Research Assistant
-                        award. Working with Professor Eric Neufeld for the summer of 2020.</p>
+                        award. Research conducted under the supervision of <a
+                            href={"https://www.cs.usask.ca/faculty/eric/"}
+                            target={"_blank"}
+                            rel={"noopener noreferrer"}
+                        >Dr. Eric Neufeld</a> for the Spring/Summer of 2020.</p>
                 </div>
 
+
                 {/* Competitive Programming */}
-                <div>
+                <div className={"nestedItem"}>
                     <h3>Competitive Programming</h3>
                     <h4>Fall 2019</h4>
                     <p>Winning team of the Advanced category for the Local Qualifier in the ACM
@@ -119,10 +147,14 @@ const Undergraduate = () => {
                 </div>
 
                 {/* Unix Bootcamps */}
-                <div>
+                <div className={"nestedItem"}>
                     <h3>Unix Bootcamp Presentations</h3>
                     <h4>Fall 2019</h4>
-                    <p>Co-prepared and delivered intermediate-level presentations for the CSSS's Unix Bootcamp.</p>
+                    <p>Co-prepared and delivered intermediate-level presentations for the <a
+                        href={"http://csss.usask.ca/"}
+                        target={"_blank"}
+                        rel={"noopener noreferrer"}
+                    >CSSS</a>'s Unix Bootcamp.</p>
                 </div>
             </div>
 
@@ -137,32 +169,45 @@ const Undergraduate = () => {
                 >Groups & Societies</NavLink>
             </div>
             <div className={"itemContent undergraduateGroupsContent"}>
-                <div>
+                <div  className={"nestedItem group"}>
                     <h3>Arts and Science Students' Union</h3>
-                    <h4>Technical Manager</h4>
-                    <h4>2017 - Present</h4>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>Technical Manager</h4>
+                        <h4 className={"time"}>2017 - Present</h4>
+                    </div>
+
                     <ul>
-                        <li>Responsible for maintaining the ASSU website (assu.usask.ca).</li>
+                        <li>Responsible for maintaining the ASSU website (<a target={"_blank"} rel={"noopener noreferrer"} href={"https://assu.usask.ca/"}>assu.usask.ca</a>).</li>
                         <li>General technical support.</li>
                     </ul>
                 </div>
 
-                <div>
+                <div className={"nestedItem group"}>
                     <h3>Cyber Security Team</h3>
-                    <h4>Member</h4>
-                    <h4>2019 - Present</h4>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>Member</h4>
+                        <h4 className={"time"}>2019 - Present</h4>
+                    </div>
                 </div>
 
-                <div>
+                <div  className={"nestedItem group"}>
                     <h3>Computer Science Students' Society</h3>
-                    <h4>Member</h4>
-                    <h4>2017 - Present</h4>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>Member</h4>
+                        <h4 className={"time"}>2017 - Present</h4>
+                    </div>
                 </div>
 
-                <div>
+                <div  className={"nestedItem group"}>
                     <h3>Competitive Programming Club</h3>
-                    <h4>Member</h4>
-                    <h4>2019 - Present</h4>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>Member</h4>
+                        <h4 className={"time"}>2019 - Present</h4>
+                    </div>
                 </div>
             </div>
 
