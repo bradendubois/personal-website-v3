@@ -30,10 +30,11 @@ const Certificate = () => {
 
             <div className={"header certificateHeader"}>
 
-                <h1>Certificate of Proficiency - Ethics, Justice & Law</h1>
-
+                <h1>Certificate of Proficiency</h1>
+                <h2>Ethics, Justice & Law</h2>
+                
                 {/* Summary */}
-                <p>Provided study in fundamental ethical theory and its application in moral, legal, social, and technological contexts. Completed alongside <Link to={"/education/undergraduate"}>B.Sc. degree</Link>.</p>
+                <p>Provided study in fundamental ethical theory and its application in moral, legal, sociopolitical, and technological contexts. Completed alongside <Link to={"/education/undergraduate"}>B.Sc. degree</Link>.</p>
 
             </div>
 

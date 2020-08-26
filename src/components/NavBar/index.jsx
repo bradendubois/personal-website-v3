@@ -9,7 +9,6 @@ const NavBar = ({ view }) => {
 
     return (
         <nav>
-            <div>
             {view.map((page, i) =>
                 <NavLink
                     key={i}
@@ -18,7 +17,6 @@ const NavBar = ({ view }) => {
                     className={`link ${page.display}`}
                 >{page.display}</NavLink>
             )}
-            </div>
             {/*
             <button onClick={() => toggleDarkMode(!darkMode)}
             >{darkMode ? "Dark Mode" : "Light Mode"}</button>*/}

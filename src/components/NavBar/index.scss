@@ -1,25 +1,78 @@
 nav {
 
-  margin: 10px;
+  width: auto;
+
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+
+  justify-content: space-around;
+  border-bottom: 1px solid #212121;
+
+  a:not(:last-of-type) {
+    border-right: 1px solid #212121;
+  }
 
   .link {
 
-    border: 3px solid #212121;
-    border-radius: 1px;
+    //width: 80px;
+    flex-grow: 1;
 
-    margin: 10px;
-    padding: 5px 10px;
+    text-align: center;
+
+    padding: 15px 20px;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+
+    color: black;
+    text-decoration: none;
+
+    &:active {
+      color: black;
+    }
+
+    &:focus {
+      color: black;
+    }
+
+    transition: all 0.5s ease;
   }
 
   .Me.active {
     display: none;
   }
 
-  .active {
-    background-color: lightblue;
+  .Topics {
+
+    &:hover {
+      background-color: rgba(220, 144, 29, 0.2);
+    }
+
+    &.active {
+      background-color: #dc901d;
+    }
+  }
+
+  .Github {
+
+    &:hover {
+      background-color: rgba(32, 147, 206, 0.2);
+    }
+
+    &.active {
+      background-color: #64afd9;
+    }
+  }
+
+  .Education {
+
+    &:hover {
+      background-color: rgba(51, 219, 169, 0.2);
+    }
+
+    &.active {
+      background-color: #33dba9;
+    }
   }
 }
