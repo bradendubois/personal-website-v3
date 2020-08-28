@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,7 +20,7 @@ body {
 
   // Used as a way of implementing a "sticky" footer that stays at bottom of page w/o overlap
   .content {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 120px);
   }
 }
 

@@ -7,15 +7,20 @@ import {
     useRouteMatch
 } from "react-router-dom";
 
-import "../components/Projects/index.scss"
+import ProjectSummary from "../components/Projects/ProjectSummary";
 
-const BasicProfileInfo  = loadable(() => import("../components/Projects/BasicProfileInfo"))
+import "../components/Projects/index.scss"
 
 const Sources = [
     {
         path: "github",
         display: "Github",
         component: loadable(() =>  import("../components/Projects/GithubProjects"))
+    },
+    {
+        path: "competitive-programming",
+        display: "Competitive Programming",
+        component: loadable(() => import("../components/Projects/CompetitiveProgramming"))
     }
 ]
 
@@ -27,6 +32,7 @@ const Projects = () => {
         <div>
 
             <div className={"projectsNav"}>
+
                 {/* Navigation between Github / Work */}
                 {Sources.map((source, i) =>
                     <NavLink
@@ -43,8 +49,9 @@ const Projects = () => {
 
             <Switch>
 
+                {/* Summary if no specific route selected */}
                 <Route exact path={`${match.url}`}>
-                    <h1>Summary TODO</h1>
+                    <ProjectSummary />
                 </Route>
 
                 {Sources.map((source, i) =>

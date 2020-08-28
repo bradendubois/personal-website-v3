@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 
 import "./index.scss"
 
+import up from "../../assets/up.png"
+
 const Footer = () => {
 
     let { section } = useParams();
@@ -11,23 +13,20 @@ const Footer = () => {
     return (
         <div className={`footer ${section}`}>
 
-            <div className={"left"}>
-                <p>Viewing: {section}</p>
+            <div>
+                <img onClick={() => {
+                    window.scrollTo(0, 0)
+                }} src={up} alt={"Scroll to top"} />
             </div>
 
-            <div className={"mid"}>
-                <button
-                    onClick={() => {
-                        window.scrollTo(0, 0)
-                    }}
-                >To Top</button>
+            <div>
                 <p>Designed and <a
                         href={"https://github.com/bradendubois/personal-website-v3"}
                         target={"_blank"}
                         rel={"noopener noreferrer"}> implemented</a> by <Link to={"/"}>me</Link>.</p>
             </div>
 
-            <div className={"right"}>
+            <div>
                 <button>Dark Mode</button>
             </div>
 

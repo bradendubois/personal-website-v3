@@ -15,6 +15,8 @@ import "./index.scss"
 
 const Project = loadable(() => import("./Project"))
 
+const BasicProfileInfo  = loadable(() => import("../BasicProfileInfo"))
+
 const classify = (language) => {
 
     switch (language) {

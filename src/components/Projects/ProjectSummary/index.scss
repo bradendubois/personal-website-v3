@@ -1,0 +1,34 @@
+.projectSummary {
+
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+
+  h2 {
+
+    margin: 15px auto 0 0;
+
+    text-decoration: underline;
+    padding: unset;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+
+  a, em, a:focus  {
+    font-weight: 600;
+    color: black;
+    transition: 0.2s;
+    font-style: normal;
+  }
+
+  a:hover {
+    color: cornflowerblue;
+  }
+
+  a:active, {
+    color: #4a76c4;
+  }
+
+}

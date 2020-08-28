@@ -1,6 +1,6 @@
 import React from "react"
 import loadable from "@loadable/component"
-import {Redirect, useRouteMatch} from "react-router"
+import { Redirect } from "react-router"
 import {
     BrowserRouter as Router,
     Switch,
@@ -73,45 +73,41 @@ const next = (location) => {
 }
 */
 
-const App = () => {
+const App = () =>
 
-    return (
-        <Router>
+    <Router>
+        <div className={"content"}>
 
-            <div className={"content"}>
+            {/* Nav bar  */}
+            <NavBar view={View} />
 
-                {/* Nav bar  */}
-                <NavBar view={View} />
-
-                {/* Switch to determine content */}
-                <Switch>
-
-                    {/* Home page when no path is specified */}
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-
-                    {View.map((page, i) =>
-                        <Route
-                            key={i}
-                            path={page.path}
-                            component={page.component}
-                        />)
-                    }
-
-                    {/* Fallback - Redirect/Catch any bad urls to avoid a 404 */}
-                    <Route path={"*"}>
-                        <Redirect to={"/"}/>
-                    </Route>
-                </Switch>
-            </div>
-
-            {/* Footer */}
+            {/* Switch to determine content */}
             <Switch>
-                <Route path={"/:section"} component={Footer} />
+
+                {/* Home page when no path is specified */}
+                <Route exact path="/">
+                    <Home />
+                </Route>
+
+                {View.map((page, i) =>
+                    <Route
+                        key={i}
+                        path={page.path}
+                        component={page.component}
+                    />)
+                }
+
+                {/* Fallback - Redirect/Catch any bad urls to avoid a 404 */}
+                <Route path={"*"}>
+                    <Redirect to={"/"}/>
+                </Route>
             </Switch>
-        </Router>
-    )
-}
+        </div>
+
+        {/* Footer */}
+        <Switch>
+            <Route path={"/:section"} component={Footer} />
+        </Switch>
+    </Router>
 
 export default App
