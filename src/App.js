@@ -1,6 +1,6 @@
 import React from "react"
 import loadable from "@loadable/component"
-import { Redirect } from "react-router"
+import {Redirect, useRouteMatch} from "react-router"
 import {
     BrowserRouter as Router,
     Switch,
@@ -38,8 +38,8 @@ const View = [
         component: loadable(() => import("./routes/Topics"))
     },
     {
-        path: "/github",
-        display: "Github",
+        path: "/projects",
+        display: "Projects",
         component: loadable(() => import("./routes/Projects"))
     },
     {
@@ -73,59 +73,45 @@ const next = (location) => {
 }
 */
 
-const App = () =>
+const App = () => {
 
-    <Router>
+    return (
+        <Router>
 
-        {/* TODO - Some kind of back/forward left/right button system, possibly in the nav bar? */}
-        {/*
-        <Link to={(location) => back(location).path}
-        ><button id={"left-button"}>Left</button></Link>
+            <div className={"content"}>
 
-        <Link to={location => next(location).path}
-        ><button id={"right-button"}>Right</button></Link>
-        */}
+                {/* Nav bar  */}
+                <NavBar view={View} />
 
-        <div>
+                {/* Switch to determine content */}
+                <Switch>
 
-            {/* Nav bar  */}
-            <NavBar view={View} />
+                    {/* Home page when no path is specified */}
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
 
-            {/* Switch to determine content */}
+                    {View.map((page, i) =>
+                        <Route
+                            key={i}
+                            path={page.path}
+                            component={page.component}
+                        />)
+                    }
+
+                    {/* Fallback - Redirect/Catch any bad urls to avoid a 404 */}
+                    <Route path={"*"}>
+                        <Redirect to={"/"}/>
+                    </Route>
+                </Switch>
+            </div>
+
+            {/* Footer */}
             <Switch>
-
-                {/* Home page when no path is specified */}
-                <Route exact path="/">
-                    <Home />
-                </Route>
-
-                {View.map((page, i) =>
-                    <Route
-                        key={i}
-                        path={page.path}
-                        component={page.component}
-                    />)
-                }
-
-                {/* Fallback - Redirect/Catch any bad urls to avoid a 404 */}
-                <Route path={"*"}>
-                    <Redirect to={"/"}/>
-                </Route>
+                <Route path={"/:section"} component={Footer} />
             </Switch>
-
-            {/* Footer Switch */}
-            <Switch>
-                {View.map((page, i) =>
-                    <Route
-                        key={i}
-                        path={page.path}
-                    >
-                        <Footer section={page.display} />
-                    </Route>)
-                }
-            </Switch>
-        </div>
-
-    </Router>
+        </Router>
+    )
+}
 
 export default App

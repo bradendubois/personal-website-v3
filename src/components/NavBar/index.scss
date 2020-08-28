@@ -1,78 +1,131 @@
-nav {
 
-  width: auto;
-
+.navHeader {
 
   display: flex;
   flex-direction: row;
 
-  justify-content: space-around;
-  border-bottom: 1px solid #212121;
+  justify-content: space-between;
+  width: 100%;
 
-  a:not(:last-of-type) {
-    border-right: 1px solid #212121;
-  }
 
-  .link {
+  .resume {
 
-    //width: 80px;
-    flex-grow: 1;
+    border: 2px solid #393939;
+    border-radius: 2px;
 
+    background-color: white;
+
+    margin: 8px 20px;
+    padding: 6px 10px;
+
+    width: 100px;
+
+    font-family:'Roboto',sans-serif;
     text-align: center;
+    vertical-align: center;
 
-    padding: 15px 20px;
+    color: #1a1a1a;
+    font-weight: 400;
 
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
+    transition: 0.2s;
 
-    color: black;
     text-decoration: none;
 
+    &:hover {
+      background-color: #a6d0d5;
+      color: #3a4241;
+    }
+
     &:active {
+      color: #556065;
+      background-color: #9cdde5;
+    }
+
+    &:visited {
+      color: #1a1a1a;
+    }
+  }
+
+  nav {
+
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    justify-content: space-around;
+
+
+    a {
+
+      flex: 1 1 0px;
+
+      border-bottom: 1px solid #212121;
+      border-left: 1px solid #212121;
+    }
+
+    a:last-of-type {
+      border-right: 1px solid #212121;
+    }
+
+    .link {
+
+      //width: 80px;
+      flex-grow: 1;
+
+      text-align: center;
+
+      padding: 15px 20px;
+
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+
       color: black;
+      text-decoration: none;
+
+      &:active {
+        color: black;
+      }
+
+      &:focus {
+        color: black;
+      }
+
+      transition: all 0.5s ease;
     }
 
-    &:focus {
-      color: black;
+    .Topics {
+
+      &:hover {
+        background-color: rgba(220, 144, 29, 0.2);
+      }
+
+      &.active {
+        background-color: #dc901d;
+      }
     }
 
-    transition: all 0.5s ease;
-  }
+    .Projects {
 
-  .Me.active {
-    display: none;
-  }
+      &:hover {
+        background-color: rgba(32, 147, 206, 0.2);
+      }
 
-  .Topics {
-
-    &:hover {
-      background-color: rgba(220, 144, 29, 0.2);
+      &.active {
+        background-color: #64afd9;
+      }
     }
 
-    &.active {
-      background-color: #dc901d;
-    }
-  }
+    .Education {
 
-  .Github {
+      &:hover {
+        background-color: rgba(51, 219, 169, 0.2);
+      }
 
-    &:hover {
-      background-color: rgba(32, 147, 206, 0.2);
-    }
-
-    &.active {
-      background-color: #64afd9;
-    }
-  }
-
-  .Education {
-
-    &:hover {
-      background-color: rgba(51, 219, 169, 0.2);
-    }
-
-    &.active {
-      background-color: #33dba9;
+      &.active {
+        background-color: #33dba9;
+      }
     }
   }
 }

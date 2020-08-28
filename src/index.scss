@@ -12,11 +12,15 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Used as a way of implementing a "sticky" footer that stays at bottom of page w/o overlap
+  .content {
+    min-height: calc(100vh - 60px);
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

@@ -1,0 +1,45 @@
+.educationSummaryContainer {
+
+  width: 80%;
+  max-width: 800px;
+
+  margin: auto;
+
+  a, a:hover, a:active, a:focus {
+    color:unset;
+    text-decoration: none;
+
+    transition: 0.2s;
+  }
+
+  a:hover {
+    color: #4299b6;
+  }
+
+  h1, h2, h3 {
+    border-bottom: 1px solid black;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 28pt;
+    width: 90%;
+  }
+
+  h2, h3 {
+    width: max-content;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  a, a h3 {
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    display: inline;
+    font-size: 12pt;
+  }
+}

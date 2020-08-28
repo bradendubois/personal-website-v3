@@ -34,7 +34,8 @@ const Undergraduate = () => {
                 <h1>B.Sc. (Double Honours)</h1>
                 <h2>Computer Science & Philosophy</h2>
 
-                <p>Also did a <Link to={"/education/certificate"}>Certificate</Link>.</p>
+                {/* <p>Also did a <Link to={"/education/certificate"}>Certificate</Link>.</p> */}
+
             </div>
 
             <div className={"programDetail undergraduateDetail"}>

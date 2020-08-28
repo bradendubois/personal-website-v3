@@ -1,0 +1,50 @@
+.projectsNav {
+
+  padding: 20px 0;
+  margin: 0 auto 30px auto;
+
+  width: 50%;
+  max-width: 800px;
+
+  border-bottom: 1px solid black;
+
+  text-align: center;
+
+  a {
+
+    text-align: center;
+    word-break: keep-all;
+
+    padding: 5px 20px;
+    margin: 5px 10px;
+
+    border: 2px solid black;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+
+    color: black;
+    text-decoration: none;
+
+    &:active {
+      color: black;
+    }
+
+    &:focus {
+      color: black;
+    }
+
+    transition: all 0.5s ease;
+  }
+
+  .github {
+
+    &:hover {
+      background-color: rgba(32, 147, 206, 0.2);
+    }
+
+    &.active {
+      background-color: rgba(34, 148, 206, 0.8);
+    }
+  }
+}

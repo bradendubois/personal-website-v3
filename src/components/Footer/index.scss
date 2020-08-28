@@ -1,0 +1,37 @@
+.footer {
+
+  text-align: center;
+
+  width: auto;
+
+  display: flex;
+  flex-direction: row;
+
+  height: 60px;
+
+  * {
+    flex: 1 1 0;
+  }
+
+  outline: 1px solid black;
+
+  transition: 0.2s;
+
+  .section {
+    text-transform: capitalize;
+  }
+
+  &.projects {
+    background-color: #4682a3;
+  }
+
+  &.education {
+    background-color: #26aa8b;
+  }
+
+  .right {
+
+    height: max-content;
+    margin: auto;
+  }
+}
