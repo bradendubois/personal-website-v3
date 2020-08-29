@@ -10,8 +10,6 @@ import Resume from "../../assets/Resume_BradenDubois.pdf"
 
 const NavBar = ({ view }) => {
 
-    // const [darkMode, toggleDarkMode] = React.useState(false)
-
     return (
 
         <div className={"navHeader"}>
@@ -28,6 +26,12 @@ const NavBar = ({ view }) => {
                     <NavLink
                         key={i}
                         to={page.path}
+                        isActive={(match, location) => {
+                            // Special case to highlight "Me" even on no page selected
+                            if (page.display === "Me") {
+                                return location.pathname === "/" || location.pathname === "/me"
+                            } return match
+                        }}
                         activeClassName={"active"}
                         className={`link ${page.display}`}
                     >{page.display}</NavLink>

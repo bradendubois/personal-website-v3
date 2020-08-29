@@ -54,19 +54,24 @@
     flex-direction: row;
     flex-grow: 1;
 
-    justify-content: space-around;
-
-
     a {
 
-      flex: 1 1 0px;
+      flex: 1 1 0;
 
       border-bottom: 1px solid #212121;
       border-left: 1px solid #212121;
+
+      max-width: 200px;
+
+    }
+
+    a:first-of-type {
+      margin-left: auto;
     }
 
     a:last-of-type {
       border-right: 1px solid #212121;
+      margin-right: 20px;
     }
 
     .link {
@@ -93,6 +98,17 @@
       }
 
       transition: all 0.5s ease;
+    }
+
+
+    .Me {
+      &:hover {
+        background-color: rgba(23, 150, 180, 0.2);
+      }
+
+      &.active {
+        background-color: #1796b4;
+      }
     }
 
     .Topics {

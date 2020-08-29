@@ -42,8 +42,7 @@ const ProjectSummary = () => {
                 href={"https://github.com/bradendubois"} target={"_blank"} rel={"noopener noreferrer"}>/bradendubois</a>), though
                 you can find a fun breakdown of them in the <Link to={`${match.url}/github`}>Github section of
                 this site</Link>; it uses the <a href={"https://developer.github.com/v3/"} target={"_blank"} rel={"noopener noreferrer"}
-                >Github REST API</a> to accomplish this. As well, a few of my personal favorites are highlighted
-                there.
+                >Github REST API</a> to accomplish this.
             </p>
 
             <Link to={`${match.url}/competitive-programming`}><h2>Competitive Programming</h2></Link>

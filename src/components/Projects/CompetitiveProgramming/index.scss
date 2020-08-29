@@ -1,0 +1,51 @@
+.competitiveProgrammingContent {
+
+  width: 80%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  h1, h2 {
+    border-bottom: 1px solid black;
+  }
+
+  em {
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  a {
+
+  }
+
+  em {
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  a, em, a:focus, em:focus  {
+    font-weight: 600;
+    color: black;
+    transition: 0.2s;
+    font-style: normal;
+  }
+
+  a:hover {
+    color: cornflowerblue;
+  }
+
+  a:active {
+    color: #4a76c4;
+  }
+
+  .festive {
+    animation: festive 1.5s infinite;
+  }
+
+  @keyframes festive {
+    0% { color: red; }
+    49% { color: red; }
+    50% { color: green; }
+    100% { color: green; }
+  }
+}

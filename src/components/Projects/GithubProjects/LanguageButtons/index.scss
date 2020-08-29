@@ -1,0 +1,150 @@
+.languageButtonContainer {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 1200px) {
+    a:last-of-type {
+      margin-left: auto;
+    }
+  }
+
+  .languageButton {
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+
+    padding: 3px;
+    margin: 3px;
+
+    height: 22px;
+
+    border: 2px solid black;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: row;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lightblue;
+    }
+
+    &:active {
+      background-color: #669aaa;
+    }
+
+    .circle {
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      margin: auto 5px;
+
+    }
+
+    .Python-circle {
+      background: #3572A5;
+    }
+
+    .JavaScript-circle {
+      background: #F1E05A;
+    }
+
+    .CPP-circle {
+      background: #F34B7D;
+    }
+
+    .TypeScript-circle {
+      background: #2B7489;
+    }
+
+    .Shell-circle {
+      background: #89E051;
+    }
+
+    .C-circle {
+      background: #555555;
+    }
+
+    .Julia-circle {
+      background: #A270BA;
+    }
+
+    .Java-circle {
+      background: #B07219;
+    }
+
+    .HTML-circle {
+      background: #E34C26;
+    }
+
+
+    p {
+      margin: 1px 0 2px 0;
+      padding: 0 0 4px 0;
+      width: max-content;
+
+      height: 16px;
+
+      color: black;
+
+      .languageCount {
+        font-weight: 600;
+      }
+    }
+
+    text-decoration: none;
+    &:active, &:focus, &:hover {
+      text-decoration: none;
+    }
+
+  }
+
+  .activeLanguage {
+
+    margin-top: -5px;
+
+    p {
+      border-bottom: 2px solid;
+    }
+
+    .Python-border {
+      border-color: #3572A5;
+    }
+
+    .JavaScript-border {
+      border-color: #F1E05A;
+    }
+
+    .CPP-border {
+      border-color: #F34B7D;
+    }
+
+    .TypeScript-border {
+      border-color: #2B7489;
+    }
+
+    .Shell-border {
+      border-color: #89E051;
+    }
+
+    .C-border {
+      border-color: #555555;
+    }
+
+    .Julia-border {
+      border-color: #A270BA;
+    }
+
+    .Java-border {
+      border-color: #B07219;
+    }
+
+    .HTML-border {
+      border-color: #E34C26;
+    }
+
+  }
+}
