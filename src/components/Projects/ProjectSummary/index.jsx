@@ -9,6 +9,7 @@ const ProjectSummary = () => {
 
     return (
         <div className={"projectSummary"}>
+
             <h1>Projects / Portfolio</h1>
             <hr />
 
@@ -22,8 +23,8 @@ const ProjectSummary = () => {
                     target={"_blank"}
                     rel={"noopener noreferrer"}
                     href={"https://github.com/bradendubois/animal-crossing-nh-villager-tracker"}>Electron-based video
-                game information client</a>, and I am currently primarily interested in <em>web-based</em> technologies
-                such as <em>React</em> to develop <em>Progressive Web Apps</em>.
+                game information client</a>, and I am currently interested in <em>web-based</em> technologies
+                such as React to develop Progressive Web Apps.
             </p>
 
             <h2>Research</h2>
@@ -32,10 +33,10 @@ const ProjectSummary = () => {
                 target={"_blank"}
                 rel={"noopener noreferrer"}
             >Dr. Eric Neufeld</a> since May 2020. This research has been focused primarily on the work of Judea Pearl
-                in causal inference in statistics. It is possible that some of this work will be made public in the future.
+                on causal inference in statistics. It is possible that some of this work will be made public in the future.
             </p>
 
-            <h2>Personal Projects</h2>
+            <Link to={`${match.url}/github`}><h2>Personal Projects</h2></Link>
             <p>
                 Almost all of my publicly-available projects are hosted on my Github (<a
                 href={"https://github.com/bradendubois"} target={"_blank"} rel={"noopener noreferrer"}>/bradendubois</a>), though
@@ -45,7 +46,7 @@ const ProjectSummary = () => {
                 there.
             </p>
 
-            <h2>Competitive Programming</h2>
+            <Link to={`${match.url}/competitive-programming`}><h2>Competitive Programming</h2></Link>
             <p>
                 A fun hobby that I enjoy and recommend to others is competitive programming. I am relatively active
                 on <a href={"https://open.kattis.com"} target={"_blank"} rel={"noopener noreferrer"}>Kattis</a> and <a

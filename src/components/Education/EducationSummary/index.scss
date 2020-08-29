@@ -5,6 +5,11 @@
 
   margin: auto;
 
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+
   a, a:hover, a:active, a:focus {
     color:unset;
     text-decoration: none;
@@ -15,6 +20,13 @@
 
   a:hover {
     color: #4299b6;
+  }
+
+  a, em, a:focus  {
+    font-weight: 600;
+    color: black;
+    transition: 0.2s;
+    font-style: normal;
   }
 
   h1, h2, h3 {

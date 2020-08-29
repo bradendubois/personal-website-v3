@@ -20,10 +20,12 @@ const EducationSummary = () =>
                 of Proficiency in Ethics, Justice & Law</Link>.
             </p>
 
-            <p>TODO - Course focus description</p>
-            <p>TODO - Work description</p>
-            <p>TODO - Achievements description</p>
-            <p>TODO - Groups description</p>
+            <p>Since May 2020, I have worked as  <em>Research Assistant</em> under the supervision of <a
+                href={"https://www.cs.usask.ca/faculty/eric/"}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+            >Dr. Eric Neufeld</a>.</p>
+
         </div>
     </div>
 

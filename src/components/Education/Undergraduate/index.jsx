@@ -1,6 +1,5 @@
 import React from "react"
 import {
-    Link,
     NavLink,
     useRouteMatch
 } from "react-router-dom";
@@ -100,7 +99,13 @@ const Undergraduate = () => {
                 <div className={"nestedItem"}>
                     <h3>Student Research Assistant</h3>
                     <h4>Spring 2020 - Present</h4>
-                    <p>Working with Professor Eric Neufeld. TODO</p>
+
+                    <p>Work as a student research assistant has been under the supervision of <a
+                        href={"https://www.cs.usask.ca/faculty/eric/"}
+                        target={"_blank"}
+                        rel={"noopener noreferrer"}
+                    >Dr. Eric Neufeld</a>, since May 2020. This research has been focused primarily on the work of Judea Pearl
+                        on causal inference in statistics.</p>
                 </div>
 
                 {/* TA / Marking Work */}
@@ -170,12 +175,32 @@ const Undergraduate = () => {
                 >Groups & Societies</NavLink>
             </div>
             <div className={"itemContent undergraduateGroupsContent"}>
+
+                <div className={"nestedItem group"}>
+                    <h3>Cyber Security Team</h3>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>VP Challenges</h4>
+                        <h4 className={"time"}>2020 - Present</h4>
+                    </div>
+
+                    <ul>
+                        <li>Responsible for creating the group's monthly curriculum.</li>
+                        <li>Responsible for curating end of month challenges, such as capture-the-flag (CTF) events.</li>
+                    </ul>
+
+                    <div className={"roleDetails"}>
+                        <h4 className={"role"}>Member</h4>
+                        <h4 className={"time"}>2019 - 2020</h4>
+                    </div>
+                </div>
+
                 <div  className={"nestedItem group"}>
                     <h3>Arts and Science Students' Union</h3>
 
                     <div className={"roleDetails"}>
                         <h4 className={"role"}>Technical Manager</h4>
-                        <h4 className={"time"}>2017 - Present</h4>
+                        <h4 className={"time"}>2017 - 2020</h4>
                     </div>
 
                     <ul>
@@ -184,13 +209,19 @@ const Undergraduate = () => {
                     </ul>
                 </div>
 
-                <div className={"nestedItem group"}>
-                    <h3>Cyber Security Team</h3>
+                <div  className={"nestedItem group"}>
+                    <h3>Competitive Programming Club</h3>
 
                     <div className={"roleDetails"}>
                         <h4 className={"role"}>Member</h4>
                         <h4 className={"time"}>2019 - Present</h4>
                     </div>
+
+                    <ul>
+                        <li>The Competitive Programming Club collaborates to share information and strategies amongst
+                            its members to improve at competitive programming in the form of contests and
+                            various online judges.</li>
+                    </ul>
                 </div>
 
                 <div  className={"nestedItem group"}>
@@ -199,15 +230,6 @@ const Undergraduate = () => {
                     <div className={"roleDetails"}>
                         <h4 className={"role"}>Member</h4>
                         <h4 className={"time"}>2017 - Present</h4>
-                    </div>
-                </div>
-
-                <div  className={"nestedItem group"}>
-                    <h3>Competitive Programming Club</h3>
-
-                    <div className={"roleDetails"}>
-                        <h4 className={"role"}>Member</h4>
-                        <h4 className={"time"}>2019 - Present</h4>
                     </div>
                 </div>
             </div>

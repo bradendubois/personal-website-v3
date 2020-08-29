@@ -36,6 +36,10 @@
     text-transform: capitalize;
   }
 
+  &.me {
+    opacity: 0;
+  }
+
   &.projects {
     background-color: #4682a3;
   }
