@@ -1,94 +1,102 @@
 .me {
 
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-
+  flex-grow: 1;
   font-family: "Montserrat", sans-serif;
 
   h1 {
     text-align: center;
+    color: black;
+    margin-top: 3%;
+  }
+
+  em {
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  a, em, a:focus, em:focus  {
+    font-weight: 600;
+    color: black;
+    transition: 0.2s;
+    font-style: normal;
+  }
+
+  a:hover, em:hover {
+    color: cornflowerblue;
+  }
+
+  a:active, em:active {
+    color: #4a76c4;
+  }
+
+  // * { color: #d9d9d9; }
+
+  a:hover {
+    color: #4299b6;
   }
 
   .main {
 
-    border: 2px solid #474747;
-    padding: 50px 20px;
-
-    background: #0C1D3B;
+    width: 90%;
+    margin: 10% auto auto auto;
 
     display: flex;
+    flex-direction: row;
 
-    * { color: #d9d9d9; }
+    p {
+      font-size: 14pt;
+      margin-top: 35px;
+      text-align: center;
+    }    
 
-    a, a:hover, a:active, a:focus {
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+    .headshot {
 
-    a:hover {
-      color: #4299b6;
-    }
+      flex: 3 1 0;
+      text-align: center;
 
-    a, em, a:focus  {
-      font-weight: 600;
-      transition: 0.2s;
-      font-style: normal;
-    }
+      img {
 
-
-    img {
-
-      max-height: 320px;
-      width: auto;
-
-      border: 2px solid #4c4c4c;
-      border-radius: 2px;
-
-      margin: auto;
-    }
-
-    div {
-      flex: 1 1 0;
-
-      &:first-of-type {
-        text-align: center;
-      }
-
-      &:last-of-type {
-        padding-left: 5%;
-      }
-
-      ul {
-        list-style-type: circle;
-        font-size: 14pt;
-      }
-    }
-  }
-
-  p {
-    font-size: 14pt;
-    margin-top: 35px;
-    text-align: center;
-  }
-
-  .bottom {
-
-    div {
-
-      width: max-content;
-      margin: auto;
-
-      display: flex;
-
-      a {
-        display: block;
+        max-width: 400px;
+        max-height: 100%;
+        
+        border: 2px solid #4c4c4c;
+        border-radius: 50%;
+  
         margin: auto;
+        
+      }
+    }
 
-        img {
-          max-height: 128px;
-          margin: auto 15px;
+    .desc {
+      
+      flex: 4 1 0;
+      padding: 30px;
+    
+      .links {
+
+        div {
+          
+          height: 100px;
+
+          margin: auto;
+          width: max-content;
+
+          a {
+
+            display: inline-block;
+
+            margin: auto 15px;                    
+            transition: 0.2s;
+
+            img {
+              max-height: 64px;
+              filter: grayscale(100%);
+            }
+
+            &:last-of-type img {
+              max-height: 48px;
+            }
+          }
         }
       }
     }

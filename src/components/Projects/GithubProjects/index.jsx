@@ -27,7 +27,7 @@ const GithubProjects = () => {
     let match = useRouteMatch()
 
     const [results, setResults] = React.useState([])
-    const [upperLimit, setLimit] = React.useState(5)
+    const [upperLimit, setLimit] = React.useState(10)
     const [languages, setLanguages] = React.useState({})
     const [preferred, setPreferred] = React.useState("")
 

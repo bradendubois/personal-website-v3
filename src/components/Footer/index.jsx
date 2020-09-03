@@ -13,11 +13,12 @@ const Footer = () => {
     return (
         <div className={`footer ${section}`}>
 
+            {/*
             <div>
                 <img onClick={() => {
                     window.scrollTo(0, 0)
                 }} src={up} alt={"Scroll to top"} />
-            </div>
+            </div> */}
 
             <div>
                 <p>Designed and <a
@@ -26,9 +27,10 @@ const Footer = () => {
                         rel={"noopener noreferrer"}> implemented</a> by <Link to={"/"}>me</Link>.</p>
             </div>
 
+            {/*
             <div>
                 <button>Dark Mode</button>
-            </div>
+            </div> */}
 
         </div>
     )

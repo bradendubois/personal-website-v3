@@ -24,7 +24,11 @@ const ProjectSummary = () => {
                     rel={"noopener noreferrer"}
                     href={"https://github.com/bradendubois/animal-crossing-nh-villager-tracker"}>Electron-based video
                 game information client</a>, and I am currently interested in <em>web-based</em> technologies
-                such as React to develop Progressive Web Apps.
+                such as React to develop Progressive Web Apps. One such project is <a 
+                    href={"https://github.com/bradendubois/personal-website-v3"}
+                    target={"_blank"}
+                    rel={"noopener noreferrer"}
+                >this website itself.</a>
             </p>
 
             <h2>Research</h2>

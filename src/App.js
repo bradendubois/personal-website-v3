@@ -27,6 +27,8 @@ const View = [
       display: "Me",
       component: Home
     },
+    
+    /*
     {
         path: "/about",
         display: "About",
@@ -37,6 +39,8 @@ const View = [
         display: "Topics",
         component: loadable(() => import("./routes/Topics"))
     },
+    */
+
     {
         path: "/projects",
         display: "Projects",

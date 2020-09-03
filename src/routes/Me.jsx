@@ -5,9 +5,9 @@ import "../components/Me/index.scss"
 
 import me from "../assets/me.jpg"
 
-import linkedin from "../assets/linkedin_alt_final.png"
-import github from "../assets/GitHub-Mark-64px.png"
-import email from "../assets/external_link.png"
+import linkedin from "../assets/linkedin.png"
+import github from "../assets/github.png"
+import email from "../assets/email.png"
 
 const sources = [
     {
@@ -31,50 +31,42 @@ const Me = () =>
 
     <div className={"me"}>
 
-        <h1>Hello!</h1>
+        <h1>bradendubois.dev</h1>
 
         <div className={"main"}>
 
-            <div>
+            <div className={"headshot"}>
                 <img src={me} alt={"A headshot of myself"} />
             </div>
 
-            <div>
-                <h2>I'm Braden, a...</h2>
-                <ul>
-                    <li><Link to={"/education/undergraduate"}>Computer Science major</Link></li>
-                    <li><Link to={"/education/undergraduate"}>Philosophy major</Link></li>
-                    <li><Link to={"/education"}>Student Research Assistant</Link></li>
-                    <li><Link to={"/projects/competitive-programming"}>Competitive programming hobbyist</Link></li>
-                    <li><Link to={"/projects"}>Developer / Programmer</Link></li>
-                    <li>Coffee snob <span aria-label={"coffee emoji"} role={"img"}>☕</span></li>
-                </ul>
-            </div>
-        </div>
+            <div className={"desc"}>
 
-        <p>
-            Hello, I'm Braden. I'm a 4th Year Computer Science / Philosophy Double Honours student at the
-            University of Saskatchewan. My free time is usually spent making fun projects or doing competitive
-            programming problems.
-        </p>
+                <p>
+                    Hello, I'm Braden. I'm a <Link to={"/education/undergraduate"}>4th Year Computer Science / Philosophy Double Honours student</Link> at the
+                    University of Saskatchewan. My free time is usually spent <Link to={"/projects"}>making fun projects</Link> or doing <Link to={"/projects/competitive-programming"}>competitive
+                    programming problems</Link>.
+                </p>
 
-        <p>
-            Between classes and work I keep fairly busy, but my inbox is always open!
-        </p>
+                <p>I am experienced with Python, web development (particularly React), as well as C++.</p>
 
-        <div className={"bottom"}>
-            <p>You can also find me in a few other places.</p>
-            <div>
-                {sources.map((s, i) =>
-                    <a
-                        key={i}
-                        href={s.url}
-                        target={"_blank"}
-                        rel={"noopener noreferrer"}
-                    >
-                        <img src={s.img} alt={s.alt} />
-                    </a>
-                )}
+                <p>Between classes and work I keep fairly busy, but <a href={"mailto:braden.dubois@usask.ca"}>my inbox is always open</a>!</p>
+
+                <div className={"links"}>
+                    <p>You can also find me in a few other places.</p>
+                    <div>
+                        {sources.map((s, i) =>
+                            <a
+                                key={i}
+                                href={s.url}
+                                target={"_blank"}
+                                rel={"noopener noreferrer"}
+                            >
+                                <img src={s.img} alt={s.alt} />
+                            </a>
+                        )}
+                    </div>
+                </div>
+                
             </div>
         </div>
 
