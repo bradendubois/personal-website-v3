@@ -69,3 +69,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 https://www.maxpixel.net/Hour-Minute-Watch-Clock-Time-Icon-2935430
 https://en.wikipedia.org/wiki/File:Linecons_big-star.svg
 https://codepen.io/thebabydino/pen/JqzxVO
+https://pixabay.com/vectors/email-remove-icon-button-web-2935507/
+https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_terminal.svg
